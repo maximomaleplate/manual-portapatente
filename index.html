@@ -8,6 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        @keyframes slideDownRight {
+            0% { transform: translate(-15px, -15px); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translate(25px, 25px); opacity: 0; }
+        }
+        .animate-slide-down-right {
+            animation: slideDownRight 2s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -74,13 +83,24 @@
             </div>
 
             <!-- Paso 5 -->
-            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden md:flex items-stretch transition-transform hover:-translate-y-1 duration-300">
-                <div class="p-8 w-full">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden md:flex flex-col transition-transform hover:-translate-y-1 duration-300">
+                <div class="p-8 pb-4">
                     <span class="text-indigo-600 font-bold text-sm tracking-wider uppercase mb-1">Paso 5</span>
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">Instalar deslizando</h2>
-                    <p class="text-gray-600 leading-relaxed">Una vez fijados los topes, deslizá el conjunto de la patente sobre ellos hasta que calce y quede firme.</p>
-                    <div class="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-6 text-center text-gray-400 italic">
-                        Imagen ilustrativa próximamente.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-2">Instalar deslizando</h2>
+                    <p class="text-gray-600 leading-relaxed">Una vez fijados los topes, deslizá el conjunto de la patente sobre ellos hacia abajo en diagonal hasta que calce y quede firme.</p>
+                </div>
+                <div class="bg-gray-100 p-6 flex justify-center">
+                    <div class="relative inline-block w-full max-w-sm rounded-lg overflow-hidden shadow-lg border-4 border-white">
+                        <img src="img_paso5.png" alt="Paso 5" class="w-full h-auto object-cover">
+                        <!-- Flecha Animada Superpuesta -->
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="animate-slide-down-right">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-red-500 drop-shadow-[0_5px_8px_rgba(0,0,0,0.8)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                                    <polyline points="19 9 19 19 9 19"></polyline>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
