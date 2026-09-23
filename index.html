@@ -8,14 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        @keyframes slideDownRight {
-            0% { transform: translate(-15px, -15px); opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { transform: translate(25px, 25px); opacity: 0; }
-        }
-        .animate-slide-down-right {
-            animation: slideDownRight 2s ease-in-out infinite;
+        /* Elimino animacion de flecha para PDF */
+        
+        @media print {
+            body { background-color: white !important; }
+            .shadow-sm, .shadow-lg, .shadow-md { box-shadow: none !important; }
+            header { padding: 20px 0 !important; color: black !important; }
+            header h1 { color: black !important; }
+            .bg-gray-900 { background-color: white !important; border-bottom: 2px solid #ccc; }
+            .bg-white { border: none !important; margin-bottom: 20px !important; page-break-inside: avoid; }
+            .step-container { page-break-inside: avoid; }
         }
     </style>
 </head>
@@ -92,9 +94,9 @@
                 <div class="bg-gray-100 p-6 flex justify-center">
                     <div class="relative inline-block w-full max-w-sm rounded-lg overflow-hidden shadow-lg border-4 border-white">
                         <img src="img_paso5.png" alt="Paso 5" class="w-full h-auto object-cover">
-                        <!-- Flecha Animada Superpuesta -->
+                        <!-- Flecha Superpuesta -->
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                            <div class="animate-slide-down-right">
+                            <div class="transform translate-x-2 translate-y-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 text-red-500 drop-shadow-[0_5px_8px_rgba(0,0,0,0.8)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="5" y1="5" x2="19" y2="19"></line>
                                     <polyline points="19 9 19 19 9 19"></polyline>
